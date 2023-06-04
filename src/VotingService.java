@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class VotingService {
-    private int[] answerCount = new int[10];
+    private final int[] answerCount = new int[10];
 
     /**
      * Prints a question and candidate answers to standard output.
@@ -59,6 +60,6 @@ public class VotingService {
             System.out.println(question.getAnswers()[i] + " : " + answerCount[i] +
                     (i == question.getAnswers().length - 1 ? "\n" : ""));
         }
+        Arrays.fill(answerCount, 0); // Reset answerCount for next question
     }
-
 }
