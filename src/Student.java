@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Student implements Voter {
     private final String ID;
-    private ArrayList<Integer> answers = new ArrayList<>();
+    private final ArrayList<Integer> ANSWERS = new ArrayList<>();
 
     /**
      * Creates a new student.
@@ -14,12 +14,12 @@ public class Student implements Voter {
 
     @Override
     public ArrayList<Integer> getAnswers() {
-        return answers;
+        return ANSWERS;
     }
 
     @Override
     public void clearAnswers() {
-        answers.clear();
+        ANSWERS.clear();
     }
 
     @Override
