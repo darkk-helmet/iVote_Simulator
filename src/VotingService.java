@@ -33,14 +33,15 @@ public class VotingService {
         for (int i = 0; i < numVoters; i++) {
             numAnswers = voters.get(i).getAnswers().size();
             voterAnswers = voters.get(i).getAnswers();
-            // Only get the last answer from a voter if the question does not allow for multiple answers
-            if (!question.multiChoice())
-                answerCount[voterAnswers.get(numAnswers - 1) - 1]++;
-            // Otherwise, get all answers submitted by the voter
-            else {
+            // Get all answers submitted by the voter if the question is multiple choice
+            if (question.multiChoice()) {
                 for (int j = 0; j < numAnswers; j++) {
                     answerCount[voterAnswers.get(j) - 1]++;
                 }
+            }
+            // Otherwise, only get the last answer submitted by the voter
+            else {
+                answerCount[voterAnswers.get(numAnswers - 1) - 1]++;
             }
             voters.get(i).clearAnswers();
         }

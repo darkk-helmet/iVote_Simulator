@@ -27,12 +27,8 @@ public class SimulationDriver {
 
         for (int i = 0; i < voters.size(); i++) {
             numAnswers = randInt.nextInt(1, question.getAnswers().length + 1);
-            // Only select one answer if the question does not allow for multiple answers
-            if (!question.multiChoice()) {
-                voters.get(i).getAnswers().add(numAnswers);
-            }
-            // Otherwise, select a random amount of answers
-            else {
+            // Select a random amount of answers if the question is multiple choice
+            if (question.multiChoice()) {
                 for (int j = 0; j < numAnswers; j++) {
                     int randAnswer = randInt.nextInt(1, question.getAnswers().length + 1);
                     while (selectedAnswers.contains(randAnswer)) {
@@ -42,6 +38,10 @@ public class SimulationDriver {
                     selectedAnswers.add(randAnswer);
                 }
                 selectedAnswers.clear();
+            }
+            // Otherwise, only select one answer
+            else {
+                voters.get(i).getAnswers().add(numAnswers);
             }
         }
     }
