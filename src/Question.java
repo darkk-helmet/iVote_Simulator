@@ -5,9 +5,15 @@ public interface Question {
     String getQuestion();
 
     /**
-     * @return The list of answer choices.
+     * @return The string array of answer choices.
      */
     String[] getAnswers();
+
+    /**
+     * Change the answer choices.
+     * @param answers The string array containing the new answer choices.
+     */
+    void changeAnswers(String[] answers);
 
     /**
      * Specifies whether the question is multiple choice.
