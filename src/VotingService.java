@@ -17,8 +17,8 @@ public class VotingService {
     /**
      * Counts how many voters selected each answer.
      * @param voters The list of {@code Voter} objects whose answers are to be counted.
-     * @param question The {@code Question} containing the answer choices. There must be no more than 10 answer
-     *                 choices in order for votes to be counted.
+     * @param question The {@code Question} containing the answer choices. There must be no more than
+     * {@code answerCount.length} answer choices in order for votes to be counted.
      */
     public void getVotes(ArrayList<Voter> voters, Question question) {
         if (question.getAnswers().length > 10) {
