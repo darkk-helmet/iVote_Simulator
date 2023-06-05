@@ -50,7 +50,7 @@ public class SimulationDriver {
         String[] answers = {"int var1 = 100;", "final int var2;", "public static final int var3 = 100;",
                 "private int var4 = 100;"};
         String[] trueFalse = {"True", "False"};
-        Question q1 = new MultipleChoiceQuestion("Which interface variable declaration is correct?",
+        Question q1 = new MultipleChoiceQuestion("Which of the interface variable declarations are correct?",
                 answers);
         Question q2 = new SingleChoiceQuestion("Object Oriented Programming is easy.", trueFalse);
         VotingService vs = new VotingService();
